@@ -1,0 +1,195 @@
+-------------html----------
+<div class="footer-wrapper">
+    <div class="footer-left">
+        <div class="logo-wrapper">
+            <div class="logo">
+                <span class="icon-shopping_cart"></span>
+            </div>
+            <span class="totalNum">11</span>
+        </div>
+        <div class="totalPrice">￥24</div>
+        <div class="desc">另需4元配送费</div>
+    </div>
+    <div class="footer-right">
+        <div class="pay">￥20元起送</div>
+    </div>
+    <div class="ball-wrapper">
+        <div class="ball"></div>
+    </div>
+</div>
+
+-------------js----------
+<div class="ctrl-wrapper">
+    <div class="ctrl-cut">
+        <div class="inner icon-remove_circle_outline"></div>
+    </div>
+    <div class="ctrl-count"></div>
+    <div class="ctrl-add icon-add_circle"></div>
+</div>
+
+-------------less----------
+.ctrl-wrapper {
+    position: absolute;
+    font-size: 0;
+    right: 0.36rem;
+    bottom: 0.24rem;
+    display: flex;
+    align-items: center;
+
+    .ctrl-cut {
+        display: none;
+
+        .inner {
+            font-size: 0.4rem;
+            color: @color-bg;
+            line-height: 0.4rem;
+        }
+
+        &.animate{
+            animation: move 0.5s linear;
+            .inner{
+                animation: rotate 0.5s linear;
+            }
+        }
+    }
+
+    .ctrl-count {
+        display: none;
+        font-size: 10px;
+        line-height: 0.4rem;
+        color: @color-text;
+        width: 0.48rem;
+        text-align: center;
+    }
+
+    .ctrl-add {
+        display: inline-block;
+        font-size: 0.4rem;
+        line-height: 0.4rem;
+        color: @color-bg;
+    }
+}
+
+.footer-wrapper {
+    width: 100%;
+    height: 0.96rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    color: rgba(255, 255, 255, 0.4);
+    display: flex;
+
+    .footer-left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background: #141d27;
+
+        .logo-wrapper {
+            width: 0.88rem;
+            height: 0.88rem;
+            padding: 0.12rem;
+            margin: 0 0.24rem;
+            margin-top: -0.2rem;
+            background: #141d27;
+            border-radius: 50%;
+            position: relative;
+
+            .logo {
+                width: 0.88rem;
+                height: 0.88rem;
+                text-align: center;
+                line-height: 0.88rem;
+                font-size: 0.48rem;
+                background: rgba(255, 255, 255, .2);
+                border-radius: 50%;
+
+                &.heightlign {
+                    background: @color-bg;
+                }
+            }
+
+            .totalNum {
+                display: block;
+                width: 0.48rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0 0.12rem;
+                box-sizing: border-box;
+                text-align: center;
+                font-size: 0.18rem;
+                line-height: 0.32rem;
+                background: @color-red;
+                color: @color-white;
+                border-radius: 0.32rem;
+            }
+        }
+
+        .totalPrice {
+            font-size: @fontsize-large-xxxxx;
+            font-weight: 700;
+            padding-right: 0.24rem;
+            .border(right, rgba(255, 255, 255, 0.2))
+        }
+
+        .desc {
+            font-size: @fontsize-large-xxxx;
+            font-weight: 200;
+            line-height: 0.48rem;
+            padding-left: 0.24rem;
+        }
+    }
+
+    .footer-right {
+        flex-basis: 2.1rem;
+        width: 2.1rem;
+        background: #2b333b;
+
+        .pay {
+            font-size: @fontsize-small;
+            font-weight: 700;
+            line-height: 0.96rem;
+            text-align: center;
+        }
+    }
+
+    .ball-wrapper {
+        // display: none;
+        position: fixed;
+        left: 0.64rem;
+        bottom: 0.44rem;
+        &.animate{
+            .pre(animation, flyX 0.5s linear);
+            .ball{
+                .pre(animation, flyY 0.5s cubic-bezier(0.495, -0.305, 0.805, 0.450));
+            }
+        }
+        
+        .ball {
+            width: 0.32rem;
+            height: 0.32rem;
+            background: @color-bg;
+            border-radius: 50%;
+        }
+    }
+}
+@keyframes move {
+    0%{
+        transform: translateX(48px);
+        opacity: 0;
+    }
+    100%{
+        transform: 0;
+        opacity: 1;
+    }
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}

@@ -1,0 +1,83 @@
+@import "./reset.less";
+body{
+    font-size:0.24rem;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height:10vh;
+    span{
+        position: absolute;
+        left:0.3rem;
+        top:50%;
+        transform:translateY(-50%);
+    }
+}
+.search_box{
+    width:90vw;
+    height:6vh;
+    background: #eee;
+    box-sizing:border-box;
+    padding:0 0.3rem;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    border-radius:0.2rem;
+    input{
+       border:none;
+       outline:none;
+       background: transparent;
+       flex:1;
+    }
+}
+.wrap{
+    width:95vw;
+    height:84vh;
+    overflow:hidden;
+    box-sizing: border-box;
+    padding:0  0.3rem;
+    .hot_city{
+        h3{
+            font-size: 0.2rem;
+            color: #ccc;
+            margin-top:0.2rem;
+        }
+        .hot_list{
+            width:90%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            li{
+                width:23%;
+                height:0.6rem;
+                border:1px solid #eee;
+                margin-top:0.2rem;
+                border-radius:5px;
+                text-align: center;
+                line-height: 0.6rem;
+            }
+        }
+    }
+    .city_cate{
+        .letter{
+            height:0.6rem;
+            line-height: 0.6rem;
+        }
+        .city_list{
+            li{
+                line-height: 0.6rem;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+}
+.fixed_box{
+    position: fixed;
+    right:0.3rem;
+    top:3rem;
+    li{
+        line-height: 0.4rem;
+    }
+}

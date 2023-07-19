@@ -1,0 +1,167 @@
+//移动端使用二倍图,三倍图
+.bg-image(@url, @ext: '.png') {
+    background-image:~"url('../img/@{url}@2x@{ext}')";
+    background-size: 100% 100%;
+
+    @media (-webkit-min-device-pixel-ratio:3),
+    (min-device-pixel-ratio:3) {
+        background-image:~"url('../img/@{url}@3x@{ext}')";
+        background-size: 100% 100%;
+    }
+}
+
+// 1px边框的设置
+.border(@_, @color: #ccc) {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        transform-origin: 0 0;
+    }
+}
+.border(top, @color: #ccc) {
+    &::before {
+        border-top: 1px solid @color;
+        transform-origin: 0 top;
+        width: 100%;
+        left: 0;
+        top: 0;
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-device-pixel-ratio:2) {
+            width: 200%;
+            transform: scaleY(0.5);
+        }
+
+        @media (-webkit-min-device-pixel-ratio:3),
+        (min-device-pixel-ratio:3) {
+            width: 300%;
+            transform: scaleY(0.333);
+        }
+    }
+}
+
+.border(bottom, @color: #ccc) {
+    &::after {
+        border-bottom: 1px solid @color;
+        transform-origin: 0 bottom;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-device-pixel-ratio:2) {
+            transform: scaleY(0.5);
+        }
+
+        @media (-webkit-min-device-pixel-ratio:3),
+        (min-device-pixel-ratio:3) {
+            transform: scaleY(0.333);
+        }
+    }
+}
+
+.border(left, @color: #ccc) {
+    &::before {
+        border-left: 1px solid @color;
+        transform-origin: left 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-device-pixel-ratio:2) {
+            transform: scaleX(0.5);
+        }
+
+        @media (-webkit-min-device-pixel-ratio:3),
+        (min-device-pixel-ratio:3) {
+            transform: scaleX(0.333);
+        }
+    }
+}
+
+.border(right, @color: #ccc) {
+    &::after {
+        border-right: 1px solid @color;
+        transform-origin: right 0;
+        height: 100%;
+        top:0;
+        right: 0;
+        border-right: 1px solid @color;
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-device-pixel-ratio:2) {
+            transform: scaleX(0.5);
+        }
+
+        @media (-webkit-min-device-pixel-ratio:3),
+        (min-device-pixel-ratio:3) {
+            transform: scaleX(0.333);
+        }
+    }
+}
+
+
+
+
+
+.border-bottom-1px(@color: #ccc) {
+    position: relative;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        transform-origin: 0 0;
+        border-bottom: 1px solid @color;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transform-origin: 0 bottom;
+
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-device-pixel-ratio:2) {
+            transform: scaleY(0.5);
+        }
+
+        @media (-webkit-min-device-pixel-ratio:3),
+        (min-device-pixel-ratio:3) {
+            transform: scaleY(0.333);
+        }
+    }
+}
+
+.border-left-1px(@color: #ccc) {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        transform-origin: 0 0;
+        border-left: 1px solid @color;
+        left: 0;
+        top: 0;
+        height: 100%;
+        transform-origin: left 0;
+
+        @media (-webkit-min-device-pixel-ratio:2),
+        (min-device-pixel-ratio:2) {
+            transform: scaleX(0.5);
+        }
+
+        @media (-webkit-min-device-pixel-ratio:3),
+        (min-device-pixel-ratio:3) {
+            transform: scaleX(0.333);
+        }
+    }
+}
+
+
+// 利用less实现CSS3前缀的混合
+.pre(@type,@value){
+    -webkit-@{type}: @value;
+    -moz-@{type}: @value;
+    -o-@{type}: @value;
+    -ms-@{type}:@value ;
+}

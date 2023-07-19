@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 02rem;
+  background: linear-gradient(to bottom, #f87e31 0%, #fff 15%);
+}
+.header {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.2rem;
+  padding: 0 0.3rem;
+  color: #fff;
+}
+.search_box {
+  box-sizing: border-box;
+  width: 90vw;
+  height: 5vh;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.2rem;
+}
+.search_box input {
+  width: 70%;
+  height: 4vh;
+  border: none;
+  outline: none;
+}
+.search_box .search {
+  width: 15%;
+  height: 4vh;
+  background-color: #fb6729;
+  border-radius: 0.3rem;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.scroll_box {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 90vh;
+  padding: 0 0.3rem;
+  overflow: scroll;
+}
+.scroll_box .category {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.scroll_box .category .cate_item {
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.scroll_box .category .cate_item img {
+  width: 90%;
+}
+.scroll_box .category .cate_item p {
+  font-size: 0.2rem;
+}
+.scroll_box .store_list {
+  box-sizing: border-box;
+  padding: 0 0.3%;
+  font-size: 0.2rem;
+}
+.scroll_box .store_list .store_item {
+  display: flex;
+  margin-top: 0.3rem;
+}
+.scroll_box .store_list .store_item img {
+  width: 35%;
+  border-radius: 0.1rem;
+}
+.scroll_box .store_list .store_item .info {
+  box-sizing: border-box;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0.3rem;
+}
+.scroll_box .store_list .store_item .info .store_name {
+  font-size: 0.3rem;
+  font-weight: 800;
+}
+.scroll_box .store_list .store_item .info .box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.scroll_box .store_list .store_item .info .cost {
+  display: flex;
+  flex-direction: row;
+}

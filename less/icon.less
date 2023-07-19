@@ -1,0 +1,139 @@
+@import "./mixin.less";
+
+.support-icon{
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.icon-1{
+    width: 0.24rem;
+    height: 0.24rem;
+    &.decrease{
+        .bg-image('decrease_1');
+    }
+    &.discount{
+        .bg-image('discount_1');
+    }
+    &.guarantee{
+        .bg-image('guarantee_1');
+    }
+    &.invoice{
+        .bg-image('invoice_1');
+    }
+    &.special{
+        .bg-image('special_1')
+    }
+}
+.icon-2{
+    width: 0.32rem;
+    height: 0.32rem;
+    &.decrease{
+        .bg-image('decrease_2');
+    }
+    &.discount{
+        .bg-image('discount_2');
+    }
+    &.guarantee{
+        .bg-image('guarantee_2');
+    }
+    &.invoice{
+        .bg-image('invoice_2');
+    }
+    &.special{
+        .bg-image('special_2')
+    }
+}
+.icon-3{
+    width:0.24rem;
+    height: 0.24rem;
+    &.decrease{
+        .bg-image('decrease_3');
+    }
+    &.discount{
+        .bg-image('discount_3');
+    }
+    &.guarantee{
+        .bg-image('guarantee_3');
+    }
+    &.invoice{
+        .bg-image('invoice_3');
+    }
+    &.special{
+        .bg-image('special_3')
+    }
+}
+.icon-4{
+    width: 0.32rem;
+    height: 0.32rem;
+    &.decrease{
+        .bg-image('decrease_4');
+    }
+    &.discount{
+        .bg-image('discount_4');
+    }
+    &.guarantee{
+        .bg-image('guarantee_4');
+    }
+    &.invoice{
+        .bg-image('invoice_4');
+    }
+    &.special{
+        .bg-image('special_4')
+    }
+}
+
+// 关于星星的处理
+.star-item{
+    background-repeat: no-repeat;
+    &.star-48{
+        width: 0.4rem;
+        height: 0.4rem;
+        margin-right: 0.44rem;
+        &:last-child{
+            margin-right: 0;
+        }
+        &.on{
+            .bg-image('star48_on')
+        }
+        &.half{
+            .bg-image('star48_half');
+        }
+        &.off{
+            .bg-image('star48_off')
+        }
+    }
+    &.star-36{
+        width: 0.3rem;
+        height: 0.3rem;
+        margin-right: 0.12rem;
+        &:last-child{
+            margin-right: 0;
+        }
+        &.on{
+            .bg-image('star36_on')
+        }
+        &.half{
+            .bg-image('star36_half');
+        }
+        &.off{
+            .bg-image('star36_off')
+        }
+    }
+    &.star-24{
+        width: 0.2rem;
+        height: 0.2rem;
+        margin-right: 0.06rem;
+        &:last-child{
+            margin-right: 0;
+        }
+        &.on{
+            .bg-image('star24_on')
+        }
+        &.half{
+            .bg-image('star24_half');
+        }
+        &.off{
+            .bg-image('star24_off')
+        }
+    }
+}
